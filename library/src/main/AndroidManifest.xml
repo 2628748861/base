@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.library">
+    <application>
+        <meta-data
+            android:name="com.app.library.app.BaseAppLifecycle"
+            android:value="com.config.app">
+        </meta-data>
+    </application>
+</manifest>

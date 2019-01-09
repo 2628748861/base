@@ -1,0 +1,68 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+    }
+}
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //-----------------------------------------------1.Component----------------------------------------------
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:support-v4:28.0.0'
+    //占位布局
+    api 'com.github.czy1121:loadinglayout:1.0.1'
+    //图片选择器
+    api 'com.github.2628748861:ImgPickerFixed:0.6.9'
+    //圆角imageview
+    api 'de.hdodenhof:circleimageview:2.2.0'
+    //上下拉刷新
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-7'
+    api 'com.jakewharton:butterknife:8.8.1'
+    //-----------------------------------------------2.Component----------------------------------------------
+    //rxjava+retrofit
+    api "io.reactivex.rxjava2:rxandroid:2.0.2"
+    api "com.squareup.retrofit2:retrofit:2.4.0"
+    api "com.squareup.retrofit2:converter-gson:2.4.0"
+    api "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    api "com.google.code.gson:gson:2.8.0"
+
+    //permission
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar"
+
+    //db
+    api 'org.greenrobot:greendao:3.2.2'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:4.5.0"
+}
