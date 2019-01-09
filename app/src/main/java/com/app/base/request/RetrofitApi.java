@@ -1,6 +1,5 @@
 package com.app.base.request;
 
-import android.content.Context;
 import com.app.library.frame.request.IHttpApi;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
